@@ -1,5 +1,5 @@
 //
-//  COLAppDelegate.h
+//  AppDelegate.h
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface COLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

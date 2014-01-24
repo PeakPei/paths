@@ -1,5 +1,5 @@
 //
-//  COLTileMapLayer.h
+//  TileMapLayer.h
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
@@ -8,9 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface COLTileMapLayer : SKNode
+@interface TileMapLayer : SKNode
 
-+ (COLTileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName;
++ (TileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName;
 
 - (instancetype)initWithGrid:(NSArray *)grid;
 

@@ -1,13 +1,13 @@
 //
-//  COLMyScene.h
+//  ViewController.h
 //  Paths
 //
-
 //  Copyright (c) 2014 Colin Milhench. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface COLMyScene : SKScene
+@interface ViewController : UIViewController
 
 @end

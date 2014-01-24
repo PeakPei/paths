@@ -1,16 +1,16 @@
 //
-//  COLTileMapLayer.m
+//  TileMapLayer.m
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
 //  Copyright (c) 2014 Colin Milhench. All rights reserved.
 //
 
-#import "COLTileMapLayer.h"
+#import "TileMapLayer.h"
 
-@implementation COLTileMapLayer
+@implementation TileMapLayer
 
-+ (COLTileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName
++ (TileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName
 {
     // file must be in bundle
     NSString *path = [[NSBundle mainBundle] pathForResource:fileName
@@ -33,7 +33,7 @@
     //NSArray *grid = [lines subarrayWithRange:NSMakeRange(2, lines.count)];
     NSArray *grid = [lines subarrayWithRange:NSMakeRange(0, lines.count)];
     
-    return [[COLTileMapLayer alloc] initWithGrid:grid];
+    return [[TileMapLayer alloc] initWithGrid:grid];
 }
 
 - (instancetype)initWithGrid:(NSArray *)grid;

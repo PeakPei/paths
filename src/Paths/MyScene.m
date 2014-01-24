@@ -1,15 +1,15 @@
 //
-//  COLMyScene.m
+//  MyScene.m
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
 //  Copyright (c) 2014 Colin Milhench. All rights reserved.
 //
 
-#import "COLMyScene.h"
-#import "COLTileMapLayer.h"
+#import "MyScene.h"
+#import "TileMapLayer.h"
 
-@implementation COLMyScene {
+@implementation MyScene {
     CGMutablePathRef _path;
     SKShapeNode *_line;
     NSMutableArray *_nodes;
@@ -17,35 +17,37 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
-        self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        //*
-        COLTileMapLayer *layer = [COLTileMapLayer tileMapLayerFromFileNamed:@"level3.txt"];
-        NSLog(@"layer.zPosition: %f", layer.zPosition);
-        layer.zPosition = 20;
-        [self addChild:layer];
-        //*/
-        /*
-        SKSpriteNode *tile;
-        for (int y = 0; y < 15; y++) {
-            for (int x = 0; x < 20; x++) {
-                tile = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
-                tile.name = @"dot";
-                tile.position = CGPointMake(48+(48*x), 718-(48*y));
-                tile.color = [SKColor colorWithRed:0x39/255.0 green:0xCC/255.0 blue:0xCC/255.0 alpha:1.0];
-                tile.colorBlendFactor = 1;
-                tile.size = CGSizeMake(20,20);
-                tile.zPosition = 100;
-                tile.speed = (y*20+x);
-                [self addChild:tile];
-            }
-        }
-        //*/
-        
+        [self initializeScene];
     }
     return self;
 }
+//*
+- (void)initializeScene {
+    self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    TileMapLayer *layer = [TileMapLayer tileMapLayerFromFileNamed:@"level3.txt"];
+    layer.zPosition = 20;
+    [self addChild:layer];
+}
+//*/
+/*
+- (void)initializeScene {
+    self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+     SKSpriteNode *tile;
+     for (int y = 0; y < 15; y++) {
+         for (int x = 0; x < 20; x++) {
+             tile = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
+             tile.name = @"dot";
+             tile.position = CGPointMake(48+(48*x), 718-(48*y));
+             tile.color = [SKColor colorWithRed:0x39/255.0 green:0xCC/255.0 blue:0xCC/255.0 alpha:1.0];
+             tile.colorBlendFactor = 1;
+             tile.size = CGSizeMake(20,20);
+             tile.zPosition = 100;
+             tile.speed = (y*20+x);
+             [self addChild:tile];
+         }
+     }
+}
+//*/
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];

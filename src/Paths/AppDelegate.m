@@ -1,14 +1,14 @@
 //
-//  COLAppDelegate.m
+//  AppDelegate.m
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
 //  Copyright (c) 2014 Colin Milhench. All rights reserved.
 //
 
-#import "COLAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation COLAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -1,15 +1,15 @@
 //
-//  COLViewController.m
+//  ViewController.m
 //  Paths
 //
 //  Created by Colin Milhench on 17/01/2014.
 //  Copyright (c) 2014 Colin Milhench. All rights reserved.
 //
 
-#import "COLViewController.h"
-#import "COLMyScene.h"
+#import "ViewController.h"
+#import "MyScene.h"
 
-@implementation COLViewController
+@implementation ViewController
 
 - (void)viewWillLayoutSubviews
 {
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [COLMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

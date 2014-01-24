@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3BB2C8CD1891195300DBFC7A /* level3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2C8CC1891195300DBFC7A /* level3.txt */; };
+		3BD083061892934200FAB49C /* SKNode+DebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD083051892934200FAB49C /* SKNode+DebugDraw.m */; };
 		3BD6B70A18897C1B008059C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B70918897C1B008059C1 /* Foundation.framework */; };
 		3BD6B70C18897C1B008059C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B70B18897C1B008059C1 /* CoreGraphics.framework */; };
 		3BD6B70E18897C1B008059C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B70D18897C1B008059C1 /* UIKit.framework */; };
 		3BD6B71018897C1B008059C1 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B70F18897C1B008059C1 /* SpriteKit.framework */; };
 		3BD6B71618897C1B008059C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B71418897C1B008059C1 /* InfoPlist.strings */; };
 		3BD6B71818897C1B008059C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B71718897C1B008059C1 /* main.m */; };
-		3BD6B71C18897C1B008059C1 /* COLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B71B18897C1B008059C1 /* COLAppDelegate.m */; };
+		3BD6B71C18897C1B008059C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B71B18897C1B008059C1 /* AppDelegate.m */; };
 		3BD6B71F18897C1B008059C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B71D18897C1B008059C1 /* Main.storyboard */; };
-		3BD6B72218897C1B008059C1 /* COLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B72118897C1B008059C1 /* COLViewController.m */; };
-		3BD6B72518897C1B008059C1 /* COLMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B72418897C1B008059C1 /* COLMyScene.m */; };
+		3BD6B72218897C1B008059C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B72118897C1B008059C1 /* ViewController.m */; };
+		3BD6B72518897C1B008059C1 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B72418897C1B008059C1 /* MyScene.m */; };
 		3BD6B72718897C1B008059C1 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B72618897C1B008059C1 /* Spaceship.png */; };
 		3BD6B72918897C1B008059C1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B72818897C1B008059C1 /* Images.xcassets */; };
 		3BD6B73018897C1B008059C1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B72F18897C1B008059C1 /* XCTest.framework */; };
@@ -27,10 +28,9 @@
 		3BD6B73C18897C1B008059C1 /* PathsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B73B18897C1B008059C1 /* PathsTests.m */; };
 		3BD6B74818897F2F008059C1 /* circle.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B74618897F2F008059C1 /* circle.pxm */; };
 		3BD6B74918897F2F008059C1 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B74718897F2F008059C1 /* circle.png */; };
-		3BD6B74C188982D4008059C1 /* COLTileMapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B74B188982D4008059C1 /* COLTileMapLayer.m */; };
+		3BD6B74C188982D4008059C1 /* TileMapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6B74B188982D4008059C1 /* TileMapLayer.m */; };
 		3BD6B74E1889915E008059C1 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B74D1889915E008059C1 /* level1.txt */; };
 		3BD6B7501889916A008059C1 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6B74F1889916A008059C1 /* level2.txt */; };
-		3BF6D11E18903BCA003128EC /* COLSKNodeTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF6D11D18903BCA003128EC /* COLSKNodeTile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		3BB2C8CC1891195300DBFC7A /* level3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level3.txt; sourceTree = "<group>"; };
+		3BD083041892934200FAB49C /* SKNode+DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+DebugDraw.h"; sourceTree = "<group>"; };
+		3BD083051892934200FAB49C /* SKNode+DebugDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+DebugDraw.m"; sourceTree = "<group>"; };
 		3BD6B70618897C1B008059C1 /* Paths.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paths.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD6B70918897C1B008059C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BD6B70B18897C1B008059C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,13 +56,13 @@
 		3BD6B71518897C1B008059C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3BD6B71718897C1B008059C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BD6B71918897C1B008059C1 /* Paths-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Paths-Prefix.pch"; sourceTree = "<group>"; };
-		3BD6B71A18897C1B008059C1 /* COLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COLAppDelegate.h; sourceTree = "<group>"; };
-		3BD6B71B18897C1B008059C1 /* COLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COLAppDelegate.m; sourceTree = "<group>"; };
+		3BD6B71A18897C1B008059C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3BD6B71B18897C1B008059C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3BD6B71E18897C1B008059C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3BD6B72018897C1B008059C1 /* COLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COLViewController.h; sourceTree = "<group>"; };
-		3BD6B72118897C1B008059C1 /* COLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COLViewController.m; sourceTree = "<group>"; };
-		3BD6B72318897C1B008059C1 /* COLMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COLMyScene.h; sourceTree = "<group>"; };
-		3BD6B72418897C1B008059C1 /* COLMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COLMyScene.m; sourceTree = "<group>"; };
+		3BD6B72018897C1B008059C1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3BD6B72118897C1B008059C1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3BD6B72318897C1B008059C1 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		3BD6B72418897C1B008059C1 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		3BD6B72618897C1B008059C1 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		3BD6B72818897C1B008059C1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BD6B72E18897C1B008059C1 /* PathsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,12 +72,10 @@
 		3BD6B73B18897C1B008059C1 /* PathsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathsTests.m; sourceTree = "<group>"; };
 		3BD6B74618897F2F008059C1 /* circle.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = circle.pxm; sourceTree = "<group>"; };
 		3BD6B74718897F2F008059C1 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
-		3BD6B74A188982D4008059C1 /* COLTileMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLTileMapLayer.h; sourceTree = "<group>"; };
-		3BD6B74B188982D4008059C1 /* COLTileMapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLTileMapLayer.m; sourceTree = "<group>"; };
+		3BD6B74A188982D4008059C1 /* TileMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapLayer.h; sourceTree = "<group>"; };
+		3BD6B74B188982D4008059C1 /* TileMapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileMapLayer.m; sourceTree = "<group>"; };
 		3BD6B74D1889915E008059C1 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 		3BD6B74F1889916A008059C1 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
-		3BF6D11C18903BCA003128EC /* COLSKNodeTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLSKNodeTile.h; sourceTree = "<group>"; };
-		3BF6D11D18903BCA003128EC /* COLSKNodeTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLSKNodeTile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,20 +138,20 @@
 			isa = PBXGroup;
 			children = (
 				3BD6B74518897F19008059C1 /* Resources */,
-				3BD6B71A18897C1B008059C1 /* COLAppDelegate.h */,
-				3BD6B71B18897C1B008059C1 /* COLAppDelegate.m */,
+				3BD6B71A18897C1B008059C1 /* AppDelegate.h */,
+				3BD6B71B18897C1B008059C1 /* AppDelegate.m */,
 				3BD6B71D18897C1B008059C1 /* Main.storyboard */,
-				3BD6B72018897C1B008059C1 /* COLViewController.h */,
-				3BD6B72118897C1B008059C1 /* COLViewController.m */,
-				3BD6B72318897C1B008059C1 /* COLMyScene.h */,
-				3BD6B72418897C1B008059C1 /* COLMyScene.m */,
+				3BD6B72018897C1B008059C1 /* ViewController.h */,
+				3BD6B72118897C1B008059C1 /* ViewController.m */,
+				3BD6B72318897C1B008059C1 /* MyScene.h */,
+				3BD6B72418897C1B008059C1 /* MyScene.m */,
 				3BD6B72618897C1B008059C1 /* Spaceship.png */,
 				3BD6B72818897C1B008059C1 /* Images.xcassets */,
 				3BD6B71218897C1B008059C1 /* Supporting Files */,
-				3BD6B74A188982D4008059C1 /* COLTileMapLayer.h */,
-				3BD6B74B188982D4008059C1 /* COLTileMapLayer.m */,
-				3BF6D11C18903BCA003128EC /* COLSKNodeTile.h */,
-				3BF6D11D18903BCA003128EC /* COLSKNodeTile.m */,
+				3BD6B74A188982D4008059C1 /* TileMapLayer.h */,
+				3BD6B74B188982D4008059C1 /* TileMapLayer.m */,
+				3BD083041892934200FAB49C /* SKNode+DebugDraw.h */,
+				3BD083051892934200FAB49C /* SKNode+DebugDraw.m */,
 			);
 			path = Paths;
 			sourceTree = "<group>";
@@ -301,12 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD6B74C188982D4008059C1 /* COLTileMapLayer.m in Sources */,
+				3BD6B74C188982D4008059C1 /* TileMapLayer.m in Sources */,
 				3BD6B71818897C1B008059C1 /* main.m in Sources */,
-				3BF6D11E18903BCA003128EC /* COLSKNodeTile.m in Sources */,
-				3BD6B72518897C1B008059C1 /* COLMyScene.m in Sources */,
-				3BD6B71C18897C1B008059C1 /* COLAppDelegate.m in Sources */,
-				3BD6B72218897C1B008059C1 /* COLViewController.m in Sources */,
+				3BD6B72518897C1B008059C1 /* MyScene.m in Sources */,
+				3BD6B71C18897C1B008059C1 /* AppDelegate.m in Sources */,
+				3BD6B72218897C1B008059C1 /* ViewController.m in Sources */,
+				3BD083061892934200FAB49C /* SKNode+DebugDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
