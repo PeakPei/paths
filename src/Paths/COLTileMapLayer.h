@@ -12,7 +12,6 @@
 
 + (COLTileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName;
 
-- (instancetype)initWithTileSize:(CGSize)size
-                              andGrid:(NSArray *)grid;
+- (instancetype)initWithGrid:(NSArray *)grid;
 
 @end

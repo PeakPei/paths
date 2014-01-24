@@ -22,6 +22,8 @@
         self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
         //*
         COLTileMapLayer *layer = [COLTileMapLayer tileMapLayerFromFileNamed:@"level3.txt"];
+        NSLog(@"layer.zPosition: %f", layer.zPosition);
+        layer.zPosition = 20;
         [self addChild:layer];
         //*/
         /*
@@ -63,7 +65,7 @@
     _line = [SKShapeNode node];
     _line.strokeColor = [SKColor colorWithRed:0xFF/255.0 green:0x41/255.0 blue:0x36/255.0 alpha:0.6];
     _line.lineWidth = 6;
-    _line.zPosition = 0;
+    _line.zPosition = 10;
     [self addChild:_line];
 }
 
@@ -72,10 +74,10 @@
     CGPoint location = [touch locationInNode:self];
     SKSpriteNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
     
+    NSLog(@"Over: %d %f %f", _nodes.count, node.speed, node.zPosition);
     if (_nodes.count == 0) {
         return;
     }
-    NSLog(@"Over: %f %f", node.speed, node.zPosition);
     
     /* restrict to: up,down,left,right*/
     SKSpriteNode *prev = [_nodes objectAtIndex: _nodes.count-1];
@@ -99,8 +101,9 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     _nodes = [NSMutableArray arrayWithObjects:nil];
-    [_line removeFromParent];
     CGPathRelease(_path);
+    _path = 0;
+    [_line removeFromParent];
     // TODO: calculate score
     // TODO: move to next puzzle if solved
 }
