@@ -10,6 +10,8 @@
 
 @interface TileMapLayer : SKNode
 
+@property(nonatomic, assign) int Target;
+
 + (TileMapLayer *)tileMapLayerFromFileNamed:(NSString *)fileName;
 
 - (instancetype)initWithGrid:(NSArray *)grid;

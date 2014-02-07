@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B047E9318A53B1D008F4856 /* TileShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B047E9218A53B1D008F4856 /* TileShape.m */; };
 		3BB2C8CD1891195300DBFC7A /* level3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2C8CC1891195300DBFC7A /* level3.txt */; };
 		3BD083061892934200FAB49C /* SKNode+DebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD083051892934200FAB49C /* SKNode+DebugDraw.m */; };
 		3BD6B70A18897C1B008059C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD6B70918897C1B008059C1 /* Foundation.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B047E9118A53B1D008F4856 /* TileShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileShape.h; sourceTree = "<group>"; };
+		3B047E9218A53B1D008F4856 /* TileShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileShape.m; sourceTree = "<group>"; };
 		3BB2C8CC1891195300DBFC7A /* level3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level3.txt; sourceTree = "<group>"; };
 		3BD083041892934200FAB49C /* SKNode+DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+DebugDraw.h"; sourceTree = "<group>"; };
 		3BD083051892934200FAB49C /* SKNode+DebugDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+DebugDraw.m"; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				3BD6B74B188982D4008059C1 /* TileMapLayer.m */,
 				3BD083041892934200FAB49C /* SKNode+DebugDraw.h */,
 				3BD083051892934200FAB49C /* SKNode+DebugDraw.m */,
+				3B047E9118A53B1D008F4856 /* TileShape.h */,
+				3B047E9218A53B1D008F4856 /* TileShape.m */,
 			);
 			path = Paths;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				3BD6B72518897C1B008059C1 /* MyScene.m in Sources */,
 				3BD6B71C18897C1B008059C1 /* AppDelegate.m in Sources */,
 				3BD6B72218897C1B008059C1 /* ViewController.m in Sources */,
+				3B047E9318A53B1D008F4856 /* TileShape.m in Sources */,
 				3BD083061892934200FAB49C /* SKNode+DebugDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
