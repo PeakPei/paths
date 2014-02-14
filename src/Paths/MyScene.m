@@ -9,23 +9,28 @@
 #import "MyScene.h"
 #import "TileMapLayer.h"
 #import "TileShape.h"
+#import "SKNode+DebugDraw.h"
 
 @implementation MyScene {
     CGMutablePathRef _path;
     TileMapLayer *_layer;
     SKShapeNode *_line;
+    SKLabelNode *_label1;
+    SKLabelNode *_label2;
     NSMutableArray *_nodes;
     int _worlds;
     int _levels;
     int _world;
     int _level;
+    int _score;
+    int _target;
 }
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         _worlds = 2;
         _levels = 10;
-        _world = 2;
+        _world = 1;
         _level = 1;
         [self initializeSceneWithWorld:_world Level:_level];
     }
@@ -33,10 +38,13 @@
 }
 
 - (void)clearScene {
-    [self enumerateChildNodesWithName:@"level" usingBlock:^(SKNode *node, BOOL *stop) {
-        [node removeFromParent];
-    }];
-
+//    [self enumerateChildNodesWithName:@"level" usingBlock:^(SKNode *node, BOOL *stop) {
+//        [node removeFromParent];
+//    }];
+//    [self enumerateChildNodesWithName:@"hud1" usingBlock:^(SKNode *node, BOOL *stop) {
+//        [node removeFromParent];
+//    }];
+    [self removeAllChildren];
 }
 - (void)initializeSceneWithWorld:(int)world Level:(int)level {
     [self clearScene];
@@ -47,6 +55,24 @@
     _layer.name = @"level";
     _layer.zPosition = 100;
     [self addChild:_layer];
+    
+    _target += _layer.Target;
+    
+    _label1 = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter"];
+    _label1.name = @"hud1";
+    _label1.text = [NSString stringWithFormat:@"%d/%d", 0, _layer.Target];
+    _label1.fontSize = 24;
+    _label1.fontColor = [SKColor blackColor];
+    _label1.position = CGPointMake(self.size.width / 2, self.size.height - 32);
+    [self addChild:_label1];
+    
+    _label2 = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter"];
+    _label2.name = @"hud2";
+    _label2.text = [NSString stringWithFormat:@"%d/%d", _score, _target];
+    _label2.fontSize = 24;
+    _label2.fontColor = [SKColor blackColor];
+    _label2.position = CGPointMake(self.size.width / 2, 8);
+    [self addChild:_label2];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -106,6 +132,8 @@
                     [_nodes addObject: tile];
                 }
             }
+            _label1.text = [NSString stringWithFormat:@"%d/%d", _nodes.count, _layer.Target];
+            _label2.text = [NSString stringWithFormat:@"%d/%d", _score + _nodes.count, _target];
         }
     }
     
@@ -123,14 +151,16 @@
     if (node.Cat == 'e') {
         // TODO: calculate score
         // TODO: move to next puzzle if solved
-        [self clearScene];
-        NSLog(@"Scored: %d/%d", _nodes.count, _layer.Target);
+        _score += _nodes.count;
+        _label2.text = [NSString stringWithFormat:@"%d/%d", _score, _target];
+        NSLog(@"Scored: %d/%d", _score, _target);
         if (_level < _levels) {
             _level +=1;
         } else {
             _world+= 1;
             _level = 1;
         }
+        [self clearScene];
         if (_world <= _worlds) {
             [self initializeSceneWithWorld:_world Level:_level];
         }
