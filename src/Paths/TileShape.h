@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface TileShape : SKShapeNode
+@interface TileShape : SKNode
 
 @property(nonatomic, assign) int Row;
 

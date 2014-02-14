@@ -15,18 +15,36 @@
     TileMapLayer *_layer;
     SKShapeNode *_line;
     NSMutableArray *_nodes;
+    int _worlds;
+    int _levels;
+    int _world;
+    int _level;
 }
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        [self initializeScene];
+        _worlds = 2;
+        _levels = 10;
+        _world = 2;
+        _level = 1;
+        [self initializeSceneWithWorld:_world Level:_level];
     }
     return self;
 }
 
-- (void)initializeScene {
+- (void)clearScene {
+    [self enumerateChildNodesWithName:@"level" usingBlock:^(SKNode *node, BOOL *stop) {
+        [node removeFromParent];
+    }];
+
+}
+- (void)initializeSceneWithWorld:(int)world Level:(int)level {
+    [self clearScene];
     self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    _layer = [TileMapLayer tileMapLayerFromFileNamed:@"level3.txt"];
+    
+    NSLog(@"Loading: level%d-%d.txt", world, level);
+    _layer = [TileMapLayer tileMapLayerFromFileNamed:[NSString stringWithFormat:@"level%d-%d.txt", world, level]];
+    _layer.name = @"level";
     _layer.zPosition = 100;
     [self addChild:_layer];
 }
@@ -34,11 +52,10 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKSpriteNode *node = (SKSpriteNode *)[self nodeAtPoint:location];
+    SKNode *node = (SKNode *)[self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:@"dot"]) {
-        
-        TileShape * tile = (TileShape *)node;
+    if ([node.name isEqualToString:@"spot"]) {
+        TileShape * tile = (TileShape *)node.parent;
         if (tile.Cat != 's') return;
         
         tile.Hit--;
@@ -65,8 +82,8 @@
         return;
     }
     
-    if ([node.name isEqualToString:@"dot"]) {
-        TileShape * tile = (TileShape *)node;
+    if ([node.name isEqualToString:@"spot"]) {
+        TileShape * tile = (TileShape *)node.parent;
         
         // restrict to: up,down,left,right
         TileShape *last = [_nodes objectAtIndex: _nodes.count-1];
@@ -80,7 +97,7 @@
             if (prev && tile == prev){
                 // TODO: JUICE : Play sound
                 last.Hit++;
-                [_nodes removeObject:last];
+                [_nodes removeLastObject];
             } else {
                 // TODO: JUICE : Light node
                 // TODO: JUICE : Play sound
@@ -106,13 +123,23 @@
     if (node.Cat == 'e') {
         // TODO: calculate score
         // TODO: move to next puzzle if solved
+        [self clearScene];
         NSLog(@"Scored: %d/%d", _nodes.count, _layer.Target);
-    };
-    
+        if (_level < _levels) {
+            _level +=1;
+        } else {
+            _world+= 1;
+            _level = 1;
+        }
+        if (_world <= _worlds) {
+            [self initializeSceneWithWorld:_world Level:_level];
+        }
+    } else {
+        [self clearScene];
+        [self initializeSceneWithWorld:_world Level:_level];
+    }
     while (_nodes.count) {
-        node = [_nodes lastObject];
-        node.Hit = 1;
-        [_nodes removeObject:node];
+        [_nodes removeLastObject];
     }
     CGPathRelease(_path);
     _path = 0;
