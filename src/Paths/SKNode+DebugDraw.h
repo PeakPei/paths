@@ -10,4 +10,7 @@
 
 @interface SKNode (DebugDraw)
 
+- (void)attachDebugRectWithSize:(CGSize)size;
+- (void)attachDebugFrameFromPath:(CGPathRef)path;
+
 @end
